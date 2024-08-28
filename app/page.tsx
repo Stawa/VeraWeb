@@ -150,7 +150,7 @@ export default function Home() {
               <p className="text-lg sm:text-xl text-indigo-300 font-semibold italic mb-6 sm:mb-10">
                 &quot;A Tool That Serves To Help Blind People&quot;
               </p>
-              <div className="mt-8 sm:mt-12">
+              <div className="mt-8 sm:mt-12 relative z-20">
                 <a
                   href="#learn-more"
                   className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg text-sm sm:text-base"
@@ -160,7 +160,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
+          <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-10 hidden sm:block">
             <Waves amplitude={20} colors={["#FF6AC6", "#436EDB", "#FF6AC6"]} />
           </div>
         </section>
