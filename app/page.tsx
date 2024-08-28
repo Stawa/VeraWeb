@@ -164,14 +164,13 @@ export default function Home() {
             </h2>
             <div className="max-w-4xl mx-auto">
               <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl relative group border-4 border-indigo-600">
-                <video
-                  className="w-full h-full object-cover"
-                  poster="/VERA.png"
-                  controls
-                >
-                  <source src="/VERA.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <iframe
+                  className="w-full h-full min-h-[250px] sm:min-h-[350px] md:min-h-[450px]"
+                  src="https://www.youtube.com/embed/M6bKa2Hqi2I"
+                  title="V.E.R.A Demo Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
               <div className="mt-8 text-center">
                 <p className="text-lg sm:text-xl text-gray-300">
