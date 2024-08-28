@@ -60,7 +60,11 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               <div className="relative w-6 h-6">
-                <span className={`absolute inset-0 transform transition-transform duration-300 ${isMenuOpen ? 'rotate-180' : ''}`}>
+                <span
+                  className={`absolute inset-0 transform transition-transform duration-300 ${
+                    isMenuOpen ? "rotate-180" : ""
+                  }`}
+                >
                   <svg
                     className="w-full h-full"
                     viewBox="0 0 24 24"
@@ -81,7 +85,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* Mobile menu */}
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+      <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/70 backdrop-blur-md">
           <Link
             href="https://github.com/Stawa/GTTS"
