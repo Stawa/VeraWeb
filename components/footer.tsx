@@ -1,21 +1,19 @@
-import Link from "next/link";
-
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 to-black text-white py-12">
+    <footer className="bg-gradient-to-r from-gray-100 to-white dark:from-gray-900 dark:to-black text-gray-800 dark:text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div>
             <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
               V.E.R.A
             </h3>
-            <p className="text-gray-300">
+            <p className="text-gray-600 dark:text-gray-300">
               Virtual Entity For Responsive Assistant
             </p>
           </div>
           <a
             href="https://github.com/Stawa/GTTS"
-            className="text-gray-300 hover:text-white transition duration-300 flex items-center"
+            className="text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition duration-300 flex items-center"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -34,11 +32,11 @@ const Footer = () => {
             Source Code
           </a>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-          <p className="text-sm text-gray-400 mb-2">
+        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
             © {new Date().getFullYear()} V.E.R.A. All rights reserved.
           </p>
-          <p className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors duration-300">
+          <p className="text-sm text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors duration-300">
             Designed with <span className="text-pink-500 text-base">♥</span> by{" "}
             <a
               href="https://github.com/Stawa"
