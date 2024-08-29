@@ -195,7 +195,7 @@ export default function Home() {
           id="learn-more"
           className="py-16 sm:py-20 border-b-2 border-indigo-300 dark:border-indigo-800 relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-100/30 via-purple-100/30 to-teal-100/30 dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-teal-900/30 opacity-40"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-200 via-purple-200 to-teal-200 dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-teal-900/30 opacity-40"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-10 sm:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600">
               How to Use V.E.R.A
@@ -204,7 +204,7 @@ export default function Home() {
               {tutorial.map((step, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-white/60 to-indigo-100/60 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl p-6 sm:p-8 flex flex-col items-center space-y-4 sm:space-y-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
+                  className="bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl p-6 sm:p-8 flex flex-col items-center space-y-4 sm:space-y-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
                 >
                   <div className="flex-shrink-0 flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 rounded-full">
                     <svg
@@ -230,7 +230,7 @@ export default function Home() {
           </div>
         </section>
         <section className="py-16 sm:py-24 border-b-2 border-indigo-300 dark:border-indigo-800 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-100/30 via-purple-100/30 to-teal-100/30 dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-teal-900/30 opacity-40"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-100 via-purple-100 to-teal-100 dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-teal-900/30 opacity-40"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-10 sm:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600">
               V.E.R.A Features
@@ -239,7 +239,7 @@ export default function Home() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-white/60 to-indigo-100/60 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl p-6 sm:p-8 flex flex-col items-center space-y-4 sm:space-y-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
+                  className="bg-gradient-to-br from-white to-indigo-100 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl p-6 sm:p-8 flex flex-col items-center space-y-4 sm:space-y-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
                 >
                   <div className="flex-shrink-0 flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 rounded-full">
                     <svg
@@ -252,14 +252,14 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                       {feature.description}
                     </p>
                     {!feature.available && (
-                      <p className="text-sm sm:text-base text-yellow-400 mt-2 font-semibold uppercase tracking-wider bg-yellow-400/10 rounded-full px-3 py-1 inline-block transform hover:scale-105 transition-transform duration-300 border border-yellow-400/30">
+                      <p className="text-sm sm:text-base text-yellow-600 dark:text-yellow-400 mt-2 font-semibold uppercase tracking-wider bg-yellow-400/10 rounded-full px-3 py-1 inline-block transform hover:scale-105 transition-transform duration-300 border border-yellow-400/30">
                         Coming Soon
                       </p>
                     )}
