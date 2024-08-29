@@ -59,6 +59,7 @@ export default function Home() {
           d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       ),
+      available: false
     },
     {
       title: "Voice Recognition",
@@ -72,6 +73,7 @@ export default function Home() {
           d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
         />
       ),
+      available: true
     },
   ];
   const team = [
@@ -108,7 +110,7 @@ export default function Home() {
       role: "Presenter V.E.R.A",
       image: "",
       github: "",
-      instagram: "",
+      instagram: "https://www.instagram.com/antds._",
     },
     {
       name: "Wahdeva",
@@ -256,6 +258,11 @@ export default function Home() {
                     <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                       {feature.description}
                     </p>
+                    {!feature.available && (
+                      <p className="text-sm sm:text-base text-yellow-400 mt-2 font-semibold uppercase tracking-wider bg-yellow-400/10 rounded-full px-3 py-1 inline-block transform hover:scale-105 transition-transform duration-300 border border-yellow-400/30">
+                        Coming Soon
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
