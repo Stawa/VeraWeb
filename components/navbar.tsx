@@ -32,6 +32,23 @@ const Navbar = () => {
     return null;
   }
 
+  const navLinks = [
+    {
+      href: "/wiki",
+      text: "Wiki",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 mr-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -51,23 +68,19 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="hidden md:flex space-x-8 items-center">
-            <Link
-              href="/wiki"
-              className="text-gray-800 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300 relative group"
-            >
-              <span className="relative z-10 flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
-                </svg>
-                Wiki
-              </span>
-              <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-cyan-600 dark:bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </Link>
+            {navLinks.map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                className="text-gray-800 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300 relative group"
+              >
+                <span className="relative z-10 flex items-center">
+                  {link.icon}
+                  {link.text}
+                </span>
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-cyan-600 dark:bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+              </Link>
+            ))}
             <button
               onClick={toggleTheme}
               className="text-gray-800 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300"
@@ -137,20 +150,64 @@ const Navbar = () => {
       </div>
       {/* Mobile menu */}
       <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 dark:bg-black/90 backdrop-blur-md">
-          <Link
-            href="#our-team"
-            className="text-gray-800 dark:text-gray-200 block px-3 py-2 rounded-md text-base font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300"
-          >
-            Our Teams
-          </Link>
+        <div
+          className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 ${
+            isScrolled
+              ? "bg-white/90 dark:bg-black/90 backdrop-blur-md"
+              : "bg-transparent"
+          }`}
+        >
+          {navLinks.map((link, index) => (
+            <Link
+              key={index}
+              href={link.href}
+              className="text-gray-800 dark:text-gray-200 flex items-center px-3 py-2 rounded-md text-base font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300"
+            >
+              {link.icon}
+              {link.text}
+            </Link>
+          ))}
           <button
             onClick={toggleTheme}
-            className="text-gray-800 dark:text-gray-200 block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300"
+            className="text-gray-800 dark:text-gray-200 flex items-center w-full text-left px-3 py-2 rounded-md text-base font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300"
           >
-            {resolvedTheme === "dark"
-              ? "Switch to Light Mode"
-              : "Switch to Dark Mode"}
+            {resolvedTheme === "dark" ? (
+              <>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+                Switch to Light Mode
+              </>
+            ) : (
+              <>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+                Switch to Dark Mode
+              </>
+            )}
           </button>
         </div>
       </div>
