@@ -19,14 +19,9 @@ const VeraCoreDocsMainMenu = () => {
 
   const sections = [
     {
-      title: "Getting Started",
-      description: "Learn how to set up and start using Vera Core.",
-      link: "/docs/core",
-    },
-    {
       title: "API Reference",
       description: "Detailed documentation of Vera Core's API.",
-      link: "/docs/core/api-reference",
+      link: "/docs/core/api",
     },
     {
       title: "Examples",
@@ -110,10 +105,10 @@ const VeraCoreDocsMainMenu = () => {
                   <span className="font-semibold">Back to Docs</span>
                 </Link>
                 <Link
-                  href="/docs/core/getting-started"
+                  href="/docs/core/api"
                   className="group bg-gradient-to-r from-blue-500 to-teal-400 text-white py-2 px-4 rounded-full hover:from-blue-600 hover:to-teal-500 transition-all duration-300 flex items-center shadow-md hover:shadow-lg"
                 >
-                  <span className="font-semibold">Next: Getting Started</span>
+                  <span className="font-semibold">Next: API Reference</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
