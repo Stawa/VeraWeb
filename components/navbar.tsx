@@ -47,6 +47,24 @@ const Navbar = () => {
         </svg>
       ),
     },
+    {
+      href: "/docs",
+      text: "Docs",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 mr-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
+    },
   ];
 
   return (
@@ -72,18 +90,18 @@ const Navbar = () => {
               <Link
                 key={index}
                 href={link.href}
-                className="text-gray-800 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300 relative group"
+                className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300 relative group"
               >
                 <span className="relative z-10 flex items-center">
                   {link.icon}
                   {link.text}
                 </span>
-                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-cyan-600 dark:bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-indigo-600 dark:bg-indigo-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </Link>
             ))}
             <button
               onClick={toggleTheme}
-              className="text-gray-800 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300"
+              className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300"
             >
               {resolvedTheme === "dark" ? (
                 <svg
@@ -161,7 +179,7 @@ const Navbar = () => {
             <Link
               key={index}
               href={link.href}
-              className="text-gray-800 dark:text-gray-200 flex items-center px-3 py-2 rounded-md text-base font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300"
+              className="text-gray-800 dark:text-gray-200 flex items-center px-3 py-2 rounded-md text-base font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300"
             >
               {link.icon}
               {link.text}
@@ -169,7 +187,7 @@ const Navbar = () => {
           ))}
           <button
             onClick={toggleTheme}
-            className="text-gray-800 dark:text-gray-200 flex items-center w-full text-left px-3 py-2 rounded-md text-base font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition duration-300"
+            className="text-gray-800 dark:text-gray-200 flex items-center w-full text-left px-3 py-2 rounded-md text-base font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300"
           >
             {resolvedTheme === "dark" ? (
               <>
