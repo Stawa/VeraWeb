@@ -42,13 +42,13 @@ interface Namespace {
 }
 
 const VeraCoreApiReference = () => {
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
   const [apiDocs, setApiDocs] = useState<Namespace[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
+      setIsLargeScreen(window.innerWidth > 1024);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -63,19 +63,26 @@ const VeraCoreApiReference = () => {
         "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/summarize/Response.cs",
         "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/music/Library.cs",
         "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/voice/Library.cs",
-        "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/voice/Microphone.cs"
+        "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/voice/Microphone.cs",
       ];
 
       try {
         const contents = await Promise.all(urls.map(fetchContent));
-        const [mainClassContent, summarizeContent, responseClassContent] =
-          contents;
+        const [
+          mainClassContent,
+          summarizeContent,
+          responseClassContent,
+          musicContent,
+          voiceContent,
+        ] = contents;
 
         if (!error) {
           const docs = await parseApiDocs(
             mainClassContent,
             summarizeContent,
-            responseClassContent
+            responseClassContent,
+            musicContent,
+            voiceContent
           );
           setApiDocs(docs);
         }
@@ -102,7 +109,9 @@ const VeraCoreApiReference = () => {
   const parseApiDocs = async (
     mainClassContent: string,
     summarizeContent: string,
-    responseClassContent: string
+    responseClassContent: string,
+    musicContent: string,
+    voiceContent: string
   ): Promise<Namespace[]> => {
     const namespaces: Namespace[] = [
       {
@@ -116,6 +125,14 @@ const VeraCoreApiReference = () => {
       {
         name: "Vera.Response",
         classes: await parseClassContent(responseClassContent, "Vera.Response"),
+      },
+      {
+        name: "Vera.Music",
+        classes: await parseClassContent(musicContent, "Vera.Music"),
+      },
+      {
+        name: "Vera.Voice",
+        classes: await parseClassContent(voiceContent, "Vera.Voice"),
       },
     ];
 
@@ -277,115 +294,6 @@ const VeraCoreApiReference = () => {
     return args;
   };
 
-  const renderClassDoc = (
-    namespace: Namespace,
-    classDoc: ApiDocType,
-    classIndex: number
-  ) => (
-    <div
-      key={classIndex}
-      className="mb-8 bg-gradient-to-br from-white/60 to-indigo-100/60 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl"
-      id={`${namespace.name}-${classDoc.className}`}
-    >
-      <div className="flex flex-col gap-6">
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col gap-2">
-            <h2 className="text-3xl font-bold text-indigo-700 dark:text-indigo-300">
-              <span className="text-purple-700 dark:text-purple-300">
-                class
-              </span>{" "}
-              <span className="break-words">{classDoc.className}</span>
-            </h2>
-            <p className="text-gray-800 dark:text-gray-200">
-              {classDoc.description}
-            </p>
-          </div>
-        </div>
-        <div className="border-t border-gray-400 dark:border-gray-600">
-          {classDoc.methods.map((method, methodIndex) =>
-            renderMethod(namespace, classDoc, method, methodIndex)
-          )}
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderMethod = (
-    namespace: Namespace,
-    classDoc: ApiDocType,
-    method: Method,
-    methodIndex: number
-  ) => (
-    <div
-      key={methodIndex}
-      className="mt-4 bg-gradient-to-br from-white/60 to-indigo-100/60 dark:from-black/60 dark:to-indigo-900/60 rounded-xl p-6 transition-all duration-300 hover:shadow-md"
-      id={`${namespace.name}-${classDoc.className}-${method.name}`}
-    >
-      <div className="flex items-center mb-4">
-        <h3 className="text-2xl font-semibold text-purple-700 dark:text-purple-300 mr-2">
-          {method.name}
-        </h3>
-        {renderVisibilityIcon(method.visibility)}
-        {renderTypeIcon(method.type)}
-      </div>
-      <p className="mb-6 text-gray-800 dark:text-gray-200 border border-gray-400 dark:border-gray-600 p-4 rounded-lg bg-white dark:bg-gray-800">
-        {method.description}
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h4 className="font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
-            Arguments
-          </h4>
-          <ul className="space-y-3 border border-gray-400 dark:border-gray-600 p-4 rounded-lg bg-white dark:bg-gray-800">
-            {method.arguments.length === 0 ? (
-              <li className="text-gray-800 dark:text-gray-200">
-                (No Arguments)
-              </li>
-            ) : (
-              method.arguments.map((arg, argIndex) => (
-                <li key={argIndex} className="text-gray-800 dark:text-gray-200">
-                  <strong className="text-purple-700 dark:text-purple-300">
-                    {arg.name}
-                  </strong>{" "}
-                  <span className="text-indigo-700 dark:text-indigo-300">
-                    ({arg.type})
-                  </span>
-                  : {arg.description}
-                </li>
-              ))
-            )}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
-            Returns
-          </h4>
-          <p className="text-gray-800 dark:text-gray-200 border border-gray-400 dark:border-gray-600 p-4 rounded-lg bg-white dark:bg-gray-800">
-            {method.returns}
-          </p>
-        </div>
-      </div>
-      <h4 className="font-semibold mt-6 mb-3 text-indigo-700 dark:text-indigo-300">
-        Example
-      </h4>
-      <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6 overflow-x-auto border border-gray-300 dark:border-gray-700">
-        <code className="text-sm text-blue-700 dark:text-blue-300">
-          {method.example}
-        </code>
-      </div>
-      <h4 className="font-semibold mb-3 text-indigo-700 dark:text-indigo-300">
-        Source Code
-      </h4>
-      <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto border border-gray-300 dark:border-gray-700">
-        <pre className="text-sm">
-          <code className="text-blue-700 dark:text-blue-300">
-            {method.sourceCode.trim()}
-          </code>
-        </pre>
-      </div>
-    </div>
-  );
-
   const renderVisibilityIcon = (
     visibility: "public" | "private" | "protected"
   ) => {
@@ -417,10 +325,10 @@ const VeraCoreApiReference = () => {
       <Navbar />
       <main className="bg-gradient-to-br from-white to-indigo-100/80 dark:from-gray-900 dark:to-indigo-900 backdrop-filter backdrop-blur-lg min-h-screen pt-16 sm:pt-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-100/30 via-purple-100/30 to-teal-100/30 dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-teal-900/30 opacity-40"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
-          <div className="flex flex-col lg:flex-row min-h-[calc(100vh-theme(spacing.16))] sm:min-h-[calc(100vh-theme(spacing.20))]">
-            {isDesktop && (
-              <nav className="lg:w-64 lg:mr-8 lg:border-r-4 lg:border-indigo-200 dark:lg:border-indigo-700 border-indigo-200">
+        <div className="relative z-10">
+          <div className="flex flex-col xl:flex-row min-h-[calc(100vh-theme(spacing.16))] sm:min-h-[calc(100vh-theme(spacing.20))]">
+            {isLargeScreen && (
+              <nav className="hidden xl:block xl:w-64 xl:mr-8 xl:border-r-4 xl:border-indigo-200 dark:xl:border-indigo-700 border-indigo-200">
                 <div className="h-full bg-transparent p-6 overflow-y-auto">
                   <h2 className="text-xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400">
                     Vera Core API
@@ -469,8 +377,8 @@ const VeraCoreApiReference = () => {
                 </div>
               </nav>
             )}
-            <div className="flex-1 mt-0">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 sm:mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 leading-tight">
+            <div className="flex-1 mt-0 px-4 sm:px-6 xl:px-8 max-w-full overflow-x-hidden">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold mb-6 sm:mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 leading-tight">
                 Vera Core API Reference
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-center mb-8 sm:mb-12 max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
