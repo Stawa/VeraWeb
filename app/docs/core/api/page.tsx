@@ -61,6 +61,9 @@ const VeraCoreApiReference = () => {
         "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/Library.cs",
         "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/summarize/Library.cs",
         "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/summarize/Response.cs",
+        "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/music/Library.cs",
+        "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/voice/Library.cs",
+        "https://raw.githubusercontent.com/Stawa/Vera/main/Vera/voice/Microphone.cs"
       ];
 
       try {
