@@ -279,11 +279,15 @@ export default function Home() {
                     <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                       {feature.description}
                     </p>
-                    {!feature.available && (
-                      <p className="text-sm sm:text-base text-yellow-600 dark:text-yellow-400 mt-2 font-semibold uppercase tracking-wider bg-yellow-400/10 rounded-full px-3 py-1 inline-block transform hover:scale-105 transition-transform duration-300 border border-yellow-400/30">
-                        Coming Soon
-                      </p>
-                    )}
+                    <p
+                      className={`text-sm sm:text-base mt-2 font-semibold uppercase tracking-wider rounded-full px-3 py-1 inline-block transform hover:scale-105 transition-transform duration-300 border ${
+                        feature.available
+                          ? "text-green-600 dark:text-green-400 bg-green-400/10 border-green-400/30"
+                          : "text-yellow-600 dark:text-yellow-400 bg-yellow-400/10 border-yellow-400/30"
+                      }`}
+                    >
+                      {feature.available ? "Available" : "Coming Soon"}
+                    </p>
                   </div>
                 </div>
               ))}

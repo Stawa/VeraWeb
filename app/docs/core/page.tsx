@@ -10,12 +10,12 @@ const VeraCoreDocsMainMenu = () => {
     {
       title: "API Reference",
       description: "Detailed documentation of Vera Core's API.",
-      link: "https://stawa.github.io/Vera/",
+      link: "https://stawa.github.io/Vera/api/Vera.html",
       target: "_blank",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 inline-block mr-2"
+          className="h-6 w-6 inline-block mr-2 text-indigo-600 dark:text-indigo-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -37,7 +37,7 @@ const VeraCoreDocsMainMenu = () => {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 inline-block mr-2"
+          className="h-6 w-6 inline-block mr-2 text-indigo-600 dark:text-indigo-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
