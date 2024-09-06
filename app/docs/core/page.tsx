@@ -10,7 +10,7 @@ const VeraCoreDocsMainMenu = () => {
     {
       title: "API Reference",
       description: "Detailed documentation of Vera Core's API.",
-      link: "https://stawa.github.io/Vera/api/Vera.html",
+      link: "https://docs.vera-ai.my.id",
       target: "_blank",
       icon: (
         <svg
