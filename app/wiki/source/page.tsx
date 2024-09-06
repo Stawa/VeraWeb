@@ -5,8 +5,51 @@ import Link from "next/link";
 import Navbar from "@default/components/navbar";
 import Footer from "@default/components/footer";
 
-const SourceCode = () => {
-  const packages = [
+interface Package {
+  name: string;
+  description: string;
+  link: string;
+  language: string;
+  available: boolean;
+  implemented: boolean;
+  onProgress: boolean;
+  icon: React.ReactNode;
+}
+
+const PackageContent: React.FC<{ pkg: Package }> = ({ pkg }) => (
+  <>
+    <div className="flex items-center mb-3 sm:mb-4">
+      {pkg.icon}
+      <h3 className="text-lg md:text-xl lg:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600 ml-2">
+        {pkg.name}
+      </h3>
+    </div>
+    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4">
+      {pkg.description}
+    </p>
+    <div className="mt-auto">
+      <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-indigo-600 bg-indigo-200 dark:text-indigo-200 dark:bg-indigo-800 last:mr-0 mr-1">
+        {pkg.language}
+      </span>
+      {pkg.implemented ? (
+        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200 dark:text-green-200 dark:bg-green-800 last:mr-0 mr-1">
+          Implemented
+        </span>
+      ) : pkg.onProgress ? (
+        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-yellow-600 bg-yellow-200 dark:text-yellow-200 dark:bg-yellow-800 last:mr-0 mr-1">
+          In Progress
+        </span>
+      ) : (
+        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-red-600 bg-red-200 dark:text-red-200 dark:bg-red-800 last:mr-0 mr-1">
+          Not Implemented
+        </span>
+      )}
+    </div>
+  </>
+);
+
+const SourceCode: React.FC = () => {
+  const packages: Package[] = [
     {
       name: "GTTS",
       description: "Core functionality and utilities for V.E.R.A",
@@ -84,114 +127,79 @@ const SourceCode = () => {
       <main className="bg-gray-100 dark:bg-gray-950 text-gray-900 dark:text-white min-h-screen pt-16 sm:pt-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-100/30 via-purple-100/30 to-teal-100/30 dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-teal-900/30 opacity-40"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 sm:mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 leading-tight">
             V.E.R.A Source Code
           </h1>
-          <div className="max-w-3xl mx-auto mb-8 sm:mb-12">
-            <p className="text-base sm:text-lg md:text-xl text-center mb-6 sm:mb-8">
-              Explore the packages that power V.E.R.A. Each package is designed
-              to handle specific functionalities of our Virtual Entity for
-              Responsive Assistant.
-            </p>
-            <div className="flex justify-center mb-6 sm:mb-8">
-              <div className="bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900 dark:to-purple-900 rounded-lg p-3 sm:p-4 shadow-lg max-w-2xl w-full">
-                <div className="flex items-center mb-2">
-                  <svg
-                    className="h-4 w-4 sm:h-5 sm:w-5 text-indigo-600 dark:text-indigo-400 mr-2"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-sm sm:text-base font-semibold text-indigo-800 dark:text-indigo-200">
-                    Exciting news!
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
-                  In the future, V.E.R.A will be rewritten in C# for enhanced
-                  performance.
-                </p>
-              </div>
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 sm:mb-8 text-center max-w-4xl mx-auto leading-relaxed">
+            Explore the packages that power V.E.R.A. Each package is designed to
+            handle specific functionalities of our Virtual Entity for Responsive
+            Assistant.
+          </p>
+          <div className="max-w-2xl mx-auto mb-8 bg-gradient-to-br from-yellow-100 to-amber-200 dark:from-yellow-900 dark:to-amber-800 rounded-lg p-4 shadow-md flex items-start border-l-4 border-yellow-500 dark:border-yellow-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-yellow-600 dark:text-yellow-400 mr-3 mt-1 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <div>
+              <h2 className="text-xl font-bold text-yellow-800 dark:text-yellow-200 mb-2">
+                Important Announcement
+              </h2>
+              <p className="text-sm text-yellow-900 dark:text-yellow-100">
+                We are excited to announce that V.E.R.A will be migrating from
+                TypeScript to C# (.NET). This transition will enhance our
+                Virtual Entity for Responsive Assistant. Stay tuned for updates!
+              </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {packages.map((pkg, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/50"
-              >
-                <div className="flex items-center mb-3 sm:mb-4">
-                  {pkg.icon}
-                  <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white ml-2 sm:ml-3">
-                    {pkg.name}
-                  </h2>
-                  <div className="flex ml-auto">
-                    {pkg.implemented && (
-                      <span className="px-1.5 py-0.5 text-2xs sm:text-xs font-semibold text-green-800 bg-green-200 rounded-full mr-1 sm:mr-2">
-                        Implemented
-                      </span>
-                    )}
-                    {pkg.onProgress && (
-                      <span className="px-1.5 py-0.5 text-2xs sm:text-xs font-semibold text-yellow-800 bg-yellow-200 rounded-full">
-                        In Progress
-                      </span>
-                    )}
-                    {!pkg.implemented && !pkg.onProgress && (
-                      <span className="px-1.5 py-0.5 text-2xs sm:text-xs font-semibold text-red-800 bg-red-200 rounded-full">
-                        Deprecated
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
-                  {pkg.description}
-                </p>
-                <p className="text-xs sm:text-sm text-indigo-600 dark:text-indigo-400 mb-3 sm:mb-4">
-                  Language: {pkg.language}
-                </p>
-                {pkg.available ? (
-                  <a
-                    href={pkg.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm sm:text-base text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-200 transition-colors duration-200"
-                  >
-                    View on GitHub
-                    <svg
-                      className="w-4 h-4 sm:w-5 sm:h-5 ml-1 sm:ml-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+              {packages.map((pkg, index) => (
+                <div key={index}>
+                  {pkg.available ? (
+                    <a
+                      href={pkg.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
-                ) : (
-                  <span className="text-sm sm:text-base text-gray-500 dark:text-gray-400">
-                    Coming soon
-                  </span>
-                )}
-              </div>
-            ))}
+                      <div
+                        className={`bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 h-full flex flex-col justify-between ${
+                          pkg.onProgress
+                            ? "border-yellow-500"
+                            : "border-green-500"
+                        } border-2`}
+                      >
+                        <PackageContent pkg={pkg} />
+                      </div>
+                    </a>
+                  ) : (
+                    <div
+                      className={`bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-md transition-all duration-300 h-full flex flex-col justify-between border-red-500 border-2 opacity-70 cursor-not-allowed`}
+                    >
+                      <PackageContent pkg={pkg} />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="mt-8 sm:mt-12 max-w-6xl mx-auto">
+          <div className="mx-auto max-w-4xl flex justify-start mt-8">
             <Link
               href="/wiki"
-              className="inline-flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg text-sm sm:text-base group"
+              className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-2xl text-gray-900 dark:text-white bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 border border-indigo-200 dark:border-indigo-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2 transform group-hover:translate-x-[-4px] transition-transform"
+                className="h-5 w-5 mr-2 text-indigo-600 dark:text-indigo-400"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -201,7 +209,9 @@ const SourceCode = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              Back to Wiki
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600">
+                Back to Wiki
+              </span>
             </Link>
           </div>
         </div>

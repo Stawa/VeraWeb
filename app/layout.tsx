@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
-const inter = Inter({ subsets: ["latin"] });
+const webFont = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "V.E.R.A - Virtual Entity For Responsive Assistant",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={inter.className}>
+      <body className={webFont.className}>
         <ThemeProvider attribute="class" defaultTheme="system">
           {children}
         </ThemeProvider>

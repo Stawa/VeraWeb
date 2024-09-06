@@ -103,50 +103,52 @@ export default function WikiHome() {
       <Navbar />
       <main className="bg-gray-100 dark:bg-gray-950 text-gray-900 dark:text-white min-h-screen">
         <section className="pt-20 sm:pt-20 md:pt-32 pb-12 sm:pb-20 md:pb-32 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-100/30 via-purple-100/30 to-teal-100/30 dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-teal-900/30 opacity-40"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 leading-tight flex items-center justify-center">
-                V.E.R.A Wiki
-              </h1>
-              <p className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 text-gray-700 dark:text-gray-300 leading-relaxed font-light">
-                Welcome to the V.E.R.A Wiki. Here you can find information about
-                our Virtual Entity for Responsive Assistant.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 justify-center">
-              {wikiSections.map((section, index) => (
-                <Link key={index} href={section.link} className="block h-full">
-                  <div className="bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl p-6 sm:p-8 flex flex-col items-center space-y-4 sm:space-y-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 h-full">
-                    <div className="flex-shrink-0 flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 rounded-full">
-                      <svg
-                        className="h-8 sm:h-12 w-8 sm:w-12 text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        {section.icon}
-                      </svg>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 leading-tight">
+              V.E.R.A Wiki
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 sm:mb-8 text-center max-w-4xl mx-auto leading-relaxed">
+              Welcome to the V.E.R.A Wiki. Here you can find information about
+              our Virtual Entity for Responsive Assistant.
+            </p>
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                {wikiSections.map((section, index) => (
+                  <Link key={index} href={section.link}>
+                    <div className="bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 h-full flex flex-col justify-between border border-indigo-200 dark:border-indigo-800">
+                      <div>
+                        <div className="flex items-center mb-3 sm:mb-4">
+                          <svg
+                            className="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-indigo-600 dark:text-indigo-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            {section.icon}
+                          </svg>
+                          <h3 className="text-lg md:text-xl lg:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600">
+                            {section.title}
+                          </h3>
+                        </div>
+                        <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4">
+                          {section.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="text-center flex-grow flex flex-col justify-center">
-                      <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
-                        {section.title}
-                      </h2>
-                      <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                        {section.description}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
+              </div>
             </div>
-            <div className="mt-12">
+            <div className="mx-auto max-w-4xl flex justify-start mt-8">
               <Link
                 href="/"
-                className="inline-flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg text-base group"
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-2xl text-gray-900 dark:text-white bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 border border-indigo-200 dark:border-indigo-800"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2 transform group-hover:translate-x-[-4px] transition-transform"
+                  className="h-5 w-5 mr-2 text-indigo-600 dark:text-indigo-400"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -156,7 +158,9 @@ export default function WikiHome() {
                     clipRule="evenodd"
                   />
                 </svg>
-                Back to Home
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600">
+                  Back to Home
+                </span>
               </Link>
             </div>
           </div>

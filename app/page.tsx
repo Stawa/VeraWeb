@@ -60,7 +60,7 @@ export default function Home() {
           d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
         />
       ),
-      available: true,
+      implemented: true,
     },
     {
       title: "Switching Languages",
@@ -281,12 +281,12 @@ export default function Home() {
                     </p>
                     <p
                       className={`text-sm sm:text-base mt-2 font-semibold uppercase tracking-wider rounded-full px-3 py-1 inline-block transform hover:scale-105 transition-transform duration-300 border ${
-                        feature.available
+                        feature.implemented
                           ? "text-green-600 dark:text-green-400 bg-green-400/10 border-green-400/30"
                           : "text-yellow-600 dark:text-yellow-400 bg-yellow-400/10 border-yellow-400/30"
                       }`}
                     >
-                      {feature.available ? "Available" : "Coming Soon"}
+                      {feature.implemented ? "Implemented" : "Coming Soon"}
                     </p>
                   </div>
                 </div>
