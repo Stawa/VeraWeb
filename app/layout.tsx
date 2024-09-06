@@ -6,8 +6,16 @@ import { ThemeProvider } from "next-themes";
 const webFont = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vera-ai.my.id"),
   title: "V.E.R.A - Virtual Entity For Responsive Assistant",
   description: "A Tool That Serves To Help Blind People",
+  openGraph: {
+    type: "website",
+    url: "https://vera-ai.my.id",
+    title: "V.E.R.A - Virtual Entity For Responsive Assistant",
+    siteName: "V.E.R.A",
+    description: "A Tool That Serves To Help Blind People",
+  },
 };
 
 export default function RootLayout({
