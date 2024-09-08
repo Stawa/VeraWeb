@@ -172,7 +172,7 @@ const SourceCode: React.FC = () => {
                       rel="noopener noreferrer"
                     >
                       <div
-                        className={`bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 h-full flex flex-col justify-between ${
+                        className={`bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 h-full flex flex-col justify-between ${
                           pkg.onProgress
                             ? "border-yellow-500"
                             : "border-green-500"
@@ -183,7 +183,7 @@ const SourceCode: React.FC = () => {
                     </a>
                   ) : (
                     <div
-                      className={`bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-md transition-all duration-300 h-full flex flex-col justify-between border-red-500 border-2 opacity-70 cursor-not-allowed`}
+                      className={`bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 rounded-2xl p-6 sm:p-8 shadow-md transition-all duration-300 h-full flex flex-col justify-between border-red-500 border-2 opacity-70 cursor-not-allowed`}
                     >
                       <PackageContent pkg={pkg} />
                     </div>
@@ -195,7 +195,7 @@ const SourceCode: React.FC = () => {
           <div className="mx-auto max-w-4xl flex justify-start mt-8">
             <Link
               href="/wiki"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-2xl text-gray-900 dark:text-white bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 backdrop-filter backdrop-blur-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 border border-indigo-200 dark:border-indigo-800"
+              className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-2xl text-gray-900 dark:text-white bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 border border-indigo-200 dark:border-indigo-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
