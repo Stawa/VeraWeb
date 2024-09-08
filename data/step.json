@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Plug in the Adapter",
+    "description": "Connect the V.E.R.A adapter to a power source to begin setup.",
+    "icon": "M13 10V3L4 14h7v7l9-11h-7z"
+  },
+  {
+    "title": "Connect the Microphone",
+    "description": "Attach the microphone to the designated port on the V.E.R.A device.",
+    "icon": "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+  },
+  {
+    "title": "Activate V.E.R.A",
+    "description": "Say 'Hello V.E.R.A' to activate. Ask your question, and V.E.R.A will respond.",
+    "icon": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+  }
+]

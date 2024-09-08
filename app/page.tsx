@@ -1,195 +1,46 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Step from "@data/step.json";
+import Team from "@data/team.json";
+import Feature from "@data/feature.json";
 import Footer from "@default/components/footer";
 import Navbar from "@default/components/navbar";
 import Waves from "react-animated-waves";
 import Image from "next/image";
 
+interface TeamMember {
+  name: string;
+  role: string;
+  instagram?: string;
+  github?: string;
+  image?: string;
+}
+
 export default function Home() {
-  const tutorial = [
-    {
-      title: "Plug in the Adapter",
-      description:
-        "Connect the V.E.R.A adapter to a power source to begin setup.",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      ),
-    },
-    {
-      title: "Connect the Microphone",
-      description:
-        "Attach the microphone to the designated port on the V.E.R.A device.",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-        />
-      ),
-    },
-    {
-      title: "Activate V.E.R.A",
-      description:
-        "Say 'Hello V.E.R.A' to activate. Ask your question, and V.E.R.A will respond.",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      ),
-    },
-  ];
-
-  const features = [
-    {
-      title: "Voice Recognition",
-      description:
-        "V.E.R.A can recognize your voice and respond to your questions.",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-        />
-      ),
-      implemented: true,
-    },
-    {
-      title: "Switching Languages",
-      description: "V.E.R.A can switch between languages.",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      ),
-      available: false,
-    },
-    {
-      title: "Music Playback",
-      description: "V.E.R.A can play and control music from various sources",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
-          />
-        </svg>
-      ),
-      available: false,
-    },
-  ];
-
-  const team = [
-    {
-      name: "Jordan",
-      role: "Team Leader",
-      image: "",
-      github: "",
-      instagram: "https://www.instagram.com/jordanadi._/",
-    },
-    {
-      name: "Damodara",
-      role: "Lead Developer",
-      image: "https://avatars.githubusercontent.com/Stawa?s=1000&v=4/",
-      github: "https://github.com/Stawa/",
-      instagram: "",
-    },
-    {
-      name: "Shivano",
-      role: "Co-Developer",
-      image: "",
-      github: "",
-      instagram: "https://www.instagram.com/shivanoysa/",
-    },
-    {
-      name: "Gaura",
-      role: "Presenter & Poster Designer",
-      image: "",
-      github: "",
-      instagram: "https://www.instagram.com/gaurakrpa/",
-    },
-    {
-      name: "Nanta",
-      role: "Presenter",
-      image: "",
-      github: "",
-      instagram: "https://www.instagram.com/antds._/",
-    },
-    {
-      name: "Wahdeva",
-      role: "Presenter",
-      image: "",
-      github: "",
-      instagram: "",
-    },
-    {
-      name: "Aryareva",
-      role: "Logo Designer",
-      image: "",
-      github: "",
-      instagram: "https://www.instagram.com/aryareva_adhiraka/",
-    },
-    {
-      name: "Sandi",
-      role: "Poster Designer",
-      image: "",
-      github: "",
-      instagram: "https://www.instagram.com/juztsandy_/",
-    },
-  ];
-
-  const [teamMembers, setTeamMembers] = useState(team);
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>(Team);
 
   useEffect(() => {
-    const fetchProfilePictures = async () => {
-      const updatedTeam = await Promise.all(
-        team.map(async (member) => {
-          if (member.instagram) {
-            try {
-              const response = await fetch(
-                `/api/instagram?username=${member.instagram}`
-              );
-              if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-              }
-              const data = await response.json();
-              const picture = data.profilePicUrl;
-              return { ...member, image: picture };
-            } catch (error) {
-              console.error(
-                `Error fetching profile picture for ${member.name}:`,
-                error
-              );
-            }
-          }
-          return member;
-        })
-      );
+    const fetchProfilePicture = async (member: TeamMember) => {
+      if (!member.instagram) return member;
+
+      try {
+        const response = await fetch(
+          `/api/instagram?username=${member.instagram}`
+        );
+        const { profilePicUrl } = await response.json();
+        return { ...member, image: profilePicUrl };
+      } catch (error) {
+        return member;
+      }
+    };
+
+    const fetchAllProfilePictures = async () => {
+      const updatedTeam = await Promise.all(Team.map(fetchProfilePicture));
       setTeamMembers(updatedTeam);
     };
 
-    fetchProfilePictures();
+    fetchAllProfilePictures();
   }, []);
 
   return (
@@ -285,7 +136,7 @@ export default function Home() {
               How to Use V.E.R.A
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-              {tutorial.map((step, index) => (
+              {Step.map((step, index) => (
                 <div
                   key={index}
                   className="bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 rounded-2xl p-6 sm:p-8 flex flex-col items-center space-y-4 sm:space-y-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
@@ -297,7 +148,12 @@ export default function Home() {
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
-                      {step.icon}
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d={step.icon}
+                      />
                     </svg>
                   </div>
                   <div className="text-center">
@@ -319,8 +175,8 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-10 sm:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600">
               V.E.R.A Features
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 justify-center">
-              {features.map((feature, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 justify-center">
+              {Feature.map((feature, index) => (
                 <div
                   key={index}
                   className="bg-gradient-to-br from-white to-indigo-100 dark:from-black/60 dark:to-indigo-900/60 rounded-2xl p-6 sm:p-8 flex flex-col items-center space-y-4 sm:space-y-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
@@ -332,18 +188,25 @@ export default function Home() {
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
-                      {feature.icon}
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d={feature.icon}
+                      />
                     </svg>
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {feature.description}
-                    </p>
+                  <div className="text-center flex flex-col h-full justify-between">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                     <p
-                      className={`text-sm sm:text-base mt-2 font-semibold uppercase tracking-wider rounded-full px-3 py-1 inline-block transform hover:scale-105 transition-transform duration-300 border ${
+                      className={`text-sm sm:text-base mt-4 font-semibold uppercase tracking-wider rounded-full px-3 py-1 inline-block transform hover:scale-105 transition-transform duration-300 border ${
                         feature.implemented
                           ? "text-green-600 dark:text-green-400 bg-green-400/10 border-green-400/30"
                           : "text-yellow-600 dark:text-yellow-400 bg-yellow-400/10 border-yellow-400/30"

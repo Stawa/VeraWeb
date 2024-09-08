@@ -2,28 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "@default/components/navbar";
 import Footer from "@default/components/footer";
+import Packages from "@data/docs/packages.json";
 
 const DocsMainMenu = () => {
-  const dotnetPackages = [
-    {
-      name: "Vera Core",
-      path: "/docs/core",
-      description: "Core API for interacting with Vera's fundamental features.",
-      icon: "M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z",
-      available: true,
-      onDevelopment: true,
-    },
-    {
-      name: "Vera Visual",
-      path: "/docs/visual",
-      description:
-        "User-friendly interface for seamless interaction with Vera API.",
-      available: false,
-      onDevelopment: false,
-      icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-    },
-  ];
-
   return (
     <>
       <Navbar />
@@ -38,7 +19,7 @@ const DocsMainMenu = () => {
           </p>
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-              {dotnetPackages.map((pkg, index) => (
+              {Packages.map((pkg, index) => (
                 <div key={index}>
                   {pkg.available ? (
                     <Link href={pkg.path}>

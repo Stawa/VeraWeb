@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     title: "V.E.R.A - Virtual Entity For Responsive Assistant",
     siteName: "V.E.R.A",
     description: "A Tool That Serves To Help Blind People",
+    images: [
+      {
+        url: "/export.png",
+        width: 800,
+        height: 420,
+        alt: "V.E.R.A Icon",
+      },
+    ],
   },
 };
 

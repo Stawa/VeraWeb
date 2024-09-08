@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Jordan",
+    "role": "Team Leader",
+    "instagram": "https://www.instagram.com/jordanadi._/"
+  },
+  {
+    "name": "Damodara",
+    "role": "Lead Developer",
+    "image": "https://avatars.githubusercontent.com/Stawa?s=1000&v=4/",
+    "github": "https://github.com/Stawa/"
+  },
+  {
+    "name": "Shivano",
+    "role": "Co-Developer",
+    "instagram": "https://www.instagram.com/shivanoysa/"
+  },
+  {
+    "name": "Gaura",
+    "role": "Presenter & Poster Designer",
+    "instagram": "https://www.instagram.com/gaurakrpa/"
+  },
+  {
+    "name": "Nanta",
+    "role": "Presenter",
+    "instagram": "https://www.instagram.com/antds._/"
+  },
+  {
+    "name": "Wahdeva",
+    "role": "Presenter"
+  },
+  {
+    "name": "Aryareva",
+    "role": "Logo Designer",
+    "instagram": "https://www.instagram.com/aryareva_adhiraka/"
+  },
+  {
+    "name": "Sandi",
+    "role": "Poster Designer",
+    "instagram": "https://www.instagram.com/juztsandy_/"
+  }
+]
