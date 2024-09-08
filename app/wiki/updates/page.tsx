@@ -69,10 +69,7 @@ const Updates = () => {
                   </p>
                   <ul className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4">
                     {log.changes.map((change, changeIndex) => (
-                      <li
-                        key={changeIndex}
-                        className="mb-2 flex items-start"
-                      >
+                      <li key={changeIndex} className="mb-2 flex items-start">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-5 w-5 mr-2 text-green-500 flex-shrink-0 mt-0.5"

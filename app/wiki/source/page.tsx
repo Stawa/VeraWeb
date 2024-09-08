@@ -74,7 +74,7 @@ const SourceCode: React.FC = () => {
     {
       name: "Vera Core",
       description: "Core functionality and utilities for V.E.R.A",
-      link: "https://github.com/Stawa/Vera-Core",
+      link: "https://github.com/Stawa/Vera",
       language: "C#",
       available: true,
       implemented: false,

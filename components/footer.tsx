@@ -12,7 +12,7 @@ const Footer = () => {
             </p>
           </div>
           <a
-            href="https://github.com/Stawa/GTTS"
+            href="https://github.com/Stawa/VeraWeb"
             className="text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white transition duration-300 flex items-center"
             target="_blank"
             rel="noopener noreferrer"

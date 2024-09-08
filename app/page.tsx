@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Footer from "@default/components/footer";
 import Navbar from "@default/components/navbar";
 import Waves from "react-animated-waves";
@@ -47,6 +48,7 @@ export default function Home() {
       ),
     },
   ];
+
   const features = [
     {
       title: "Voice Recognition",
@@ -97,45 +99,46 @@ export default function Home() {
       available: false,
     },
   ];
+
   const team = [
     {
       name: "Jordan",
-      role: "Leader of Team",
+      role: "Team Leader",
       image: "",
       github: "",
       instagram: "https://www.instagram.com/jordanadi._/",
     },
     {
       name: "Damodara",
-      role: "Head Developer of V.E.R.A",
-      image: "",
-      github: "https://github.com/Stawa",
+      role: "Lead Developer",
+      image: "https://avatars.githubusercontent.com/Stawa?s=1000&v=4/",
+      github: "https://github.com/Stawa/",
       instagram: "",
     },
     {
       name: "Shivano",
-      role: "Co-Developer of V.E.R.A",
+      role: "Co-Developer",
       image: "",
       github: "",
       instagram: "https://www.instagram.com/shivanoysa/",
     },
     {
       name: "Gaura",
-      role: "Presenter V.E.R.A & Poster Designer",
+      role: "Presenter & Poster Designer",
       image: "",
       github: "",
       instagram: "https://www.instagram.com/gaurakrpa/",
     },
     {
       name: "Nanta",
-      role: "Presenter V.E.R.A",
+      role: "Presenter",
       image: "",
       github: "",
-      instagram: "https://www.instagram.com/antds._",
+      instagram: "https://www.instagram.com/antds._/",
     },
     {
       name: "Wahdeva",
-      role: "Presenter V.E.R.A",
+      role: "Presenter",
       image: "",
       github: "",
       instagram: "",
@@ -155,6 +158,39 @@ export default function Home() {
       instagram: "https://www.instagram.com/juztsandy_/",
     },
   ];
+
+  const [teamMembers, setTeamMembers] = useState(team);
+
+  useEffect(() => {
+    const fetchProfilePictures = async () => {
+      const updatedTeam = await Promise.all(
+        team.map(async (member) => {
+          if (member.instagram) {
+            try {
+              const response = await fetch(
+                `/api/instagram?username=${member.instagram}`
+              );
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              const data = await response.json();
+              const picture = data.profilePicUrl;
+              return { ...member, image: picture };
+            } catch (error) {
+              console.error(
+                `Error fetching profile picture for ${member.name}:`,
+                error
+              );
+            }
+          }
+          return member;
+        })
+      );
+      setTeamMembers(updatedTeam);
+    };
+
+    fetchProfilePictures();
+  }, []);
 
   return (
     <>
@@ -185,6 +221,33 @@ export default function Home() {
           </div>
           <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-10 hidden sm:block">
             <Waves amplitude={20} colors={["#FF6AC6", "#436EDB", "#FF6AC6"]} />
+          </div>
+        </section>
+        <section className="py-16 sm:py-20 border-b-2 border-indigo-300 dark:border-indigo-800 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-100/30 via-purple-100/30 to-teal-100/30 dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-teal-900/30 opacity-40"></div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-2 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600">
+              Award-Winning Innovation
+            </h2>
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-6">
+                We are proud to announce that our team won the Silver Medal in
+                the IID Innopa competition with V.E.R.A as our innovative tool!
+              </p>
+              <div className="bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 rounded-2xl p-4 sm:p-6 mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-indigo-300 dark:border-indigo-700 max-w-2xl mx-auto">
+                <h3 className="text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 mb-3">
+                  Silver Medal Winner
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+                  V.E.R.A has been recognized for its innovative approach in
+                  assisting blind individuals, showcasing our commitment to
+                  accessibility and technological advancement.
+                </p>
+                <p className="text-xs sm:text-sm text-indigo-600 dark:text-indigo-400 font-semibold">
+                  31st August 2024
+                </p>
+              </div>
+            </div>
           </div>
         </section>
         <section className="py-16 sm:py-20 border-b-2 border-indigo-300 dark:border-indigo-800 relative overflow-hidden">
@@ -304,7 +367,7 @@ export default function Home() {
               V.E.R.A Team
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-center">
-              {team.map((member, index) => (
+              {teamMembers.map((member, index) => (
                 <div
                   key={index}
                   className="bg-gradient-to-br from-white/60 to-indigo-100/60 dark:from-black/60 dark:to-indigo-900/60 rounded-2xl p-6 sm:p-8 flex flex-col items-center space-y-4 sm:space-y-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
