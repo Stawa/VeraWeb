@@ -6,6 +6,7 @@ import Team from "@data/team.json";
 import Feature from "@data/feature.json";
 import Footer from "@default/components/footer";
 import Navbar from "@default/components/navbar";
+import Loading from "@default/components/loading";
 import Waves from "react-animated-waves";
 import Image from "next/image";
 
@@ -19,6 +20,7 @@ interface TeamMember {
 
 export default function Home() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>(Team);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchProfilePicture = async (member: TeamMember) => {
@@ -38,10 +40,15 @@ export default function Home() {
     const fetchAllProfilePictures = async () => {
       const updatedTeam = await Promise.all(Team.map(fetchProfilePicture));
       setTeamMembers(updatedTeam);
+      setIsLoading(false);
     };
 
     fetchAllProfilePictures();
   }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <>
