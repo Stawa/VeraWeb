@@ -1,10 +1,14 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Navbar from "@default/components/navbar";
 import Footer from "@default/components/footer";
 import Section from "@default/data/privacy/section.json";
+
+export const metadata = {
+  title: "Privacy Policy",
+  description:
+    "Privacy policy outlines how we handle and protect your personal data.",
+};
 
 const PrivacyPolicy = () => {
   return (

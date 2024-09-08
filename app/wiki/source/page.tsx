@@ -1,9 +1,13 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Navbar from "@default/components/navbar";
 import Footer from "@default/components/footer";
+
+export const metadata = {
+  title: "Source Code",
+  description:
+    "Explore the source code of V.E.R.A, a cutting-edge virtual assistant designed to revolutionize human-computer interaction.",
+};
 
 interface Package {
   name: string;

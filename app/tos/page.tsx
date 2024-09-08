@@ -1,10 +1,14 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Navbar from "@default/components/navbar";
 import Footer from "@default/components/footer";
 import Section from "@default/data/tos/section.json";
+
+export const metadata = {
+  title: "Terms of Service",
+  description:
+    "This page outlines the terms of service for V.E.R.A, a virtual assistant designed to revolutionize human-computer interaction. Please read these terms carefully before using V.E.R.A.",
+};
 
 const TermsOfService = () => {
   return (

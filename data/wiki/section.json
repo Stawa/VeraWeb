@@ -1,0 +1,26 @@
+[
+  {
+    "title": "FAQs",
+    "description": "Find answers to frequently asked questions about V.E.R.A",
+    "link": "/wiki/faqs",
+    "icon": "M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+  },
+  {
+    "title": "Troubleshooting",
+    "description": "Solutions to common issues and problems",
+    "link": "/wiki/troubleshooting",
+    "icon": "M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+  },
+  {
+    "title": "Updates",
+    "description": "Latest updates and changes to V.E.R.A",
+    "link": "/wiki/updates",
+    "icon": "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+  },
+  {
+    "title": "Source Code",
+    "description": "Access and explore the V.E.R.A project source code",
+    "link": "/wiki/source",
+    "icon": "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+  }
+]

@@ -1,10 +1,13 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Navbar from "@default/components/navbar";
 import Footer from "@default/components/footer";
 import Faqs from "@data/faq/question.json";
+
+export const metadata = {
+  title: "FAQs",
+  description: "Find answers to common questions about V.E.R.A.",
+};
 
 const FAQs = () => {
   return (

@@ -1,9 +1,13 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Navbar from "@default/components/navbar";
 import Footer from "@default/components/footer";
+
+export const metadata = {
+  title: "Changelogs",
+  description:
+    "Stay up-to-date with the latest changes and improvements to V.E.R.A.",
+};
 
 const Updates = () => {
   const changelogs = [

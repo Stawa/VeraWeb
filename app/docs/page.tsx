@@ -4,6 +4,12 @@ import Navbar from "@default/components/navbar";
 import Footer from "@default/components/footer";
 import Packages from "@data/docs/packages.json";
 
+export const metadata = {
+  title: "Documentation",
+  description:
+    "Explore the comprehensive documentation for V.E.R.A, a cutting-edge virtual assistant designed to revolutionize human-computer interaction.",
+};
+
 const DocsMainMenu = () => {
   return (
     <>

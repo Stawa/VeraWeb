@@ -1,58 +1,15 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Navbar from "@default/components/navbar";
 import Footer from "@default/components/footer";
+import Section from "@default/data/troubleshoot/items.json";
+
+export const metadata = {
+  title: "Troubleshooting",
+  description: "Find solutions to common issues with V.E.R.A",
+};
 
 const Troubleshooting = () => {
-  const troubleshootingItems = [
-    {
-      problem: "V.E.R.A is not responding",
-      solutions: [
-        "Check if the device is properly connected to power and the internet",
-        "Restart the V.E.R.A device",
-        "Ensure your internet connection is stable",
-      ],
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-    },
-    {
-      problem: "Coming Soon",
-      solutions: ["Coming Soon"],
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-    },
-  ];
-
   return (
     <>
       <Navbar />
@@ -68,7 +25,7 @@ const Troubleshooting = () => {
             </p>
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-                {troubleshootingItems.map((item, index) => (
+                {Section.map((item, index) => (
                   <div
                     key={index}
                     className="bg-gradient-to-br from-white/80 to-indigo-100/80 dark:from-black/60 dark:to-indigo-900/60 rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 h-full flex flex-col justify-between border border-indigo-200 dark:border-indigo-800"
@@ -82,7 +39,20 @@ const Troubleshooting = () => {
                           viewBox="0 0 24 24"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          {item.icon}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d={item.icon}
+                            />
+                          </svg>
                         </svg>
                         <h3 className="text-lg md:text-xl lg:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600">
                           {item.problem}

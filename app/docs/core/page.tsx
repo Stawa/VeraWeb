@@ -1,10 +1,14 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Navbar from "@default/components/navbar";
 import Footer from "@default/components/footer";
 import Option from "@data/docs/core/option.json";
+
+export const metadata = {
+  title: "Vera Core",
+  description:
+    "Explore the comprehensive documentation for V.E.R.A, a cutting-edge virtual assistant designed to revolutionize human-computer interaction.",
+};
 
 const VeraCoreDocsMainMenu = () => {
   return (
