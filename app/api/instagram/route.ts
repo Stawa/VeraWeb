@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { fetchUser } from "./fetchUser";
 
+export const runtime = "edge";
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const username = searchParams.get("username");
