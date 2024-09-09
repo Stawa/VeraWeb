@@ -59,6 +59,9 @@ export default function Home() {
             width={128}
             height={128}
             className={`rounded-full object-cover border-4 border-purple-500 ${loading ? "animate-pulse" : ""}`}
+            loading="lazy"
+            decoding="async"
+            sizes="128px"
           />
         ) : (
           <div
