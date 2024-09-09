@@ -14,6 +14,7 @@ export const ThemeToggle = ({
     <button
       onClick={toggleTheme}
       className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300"
+      aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
     >
       {resolvedTheme === "dark" ? (
         <svg
@@ -22,6 +23,7 @@ export const ThemeToggle = ({
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -37,6 +39,7 @@ export const ThemeToggle = ({
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -68,6 +71,9 @@ export const LanguageMenu = ({
       <button
         className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300 flex items-center"
         onClick={toggleLanguageMenu}
+        aria-expanded={isLanguageMenuOpen}
+        aria-haspopup="true"
+        aria-label="Select language"
       >
         <span className="flex items-center">
           <svg
@@ -76,6 +82,7 @@ export const LanguageMenu = ({
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -94,6 +101,7 @@ export const LanguageMenu = ({
               key={lang.code}
               className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left flex items-center"
               onClick={() => changeLanguage(lang.code)}
+              aria-label={`Change language to ${lang.name}`}
             >
               {lang.icon}
               <span className="ml-2">{lang.name}</span>
@@ -107,7 +115,6 @@ export const LanguageMenu = ({
 
 export const MobileMenu = ({
   isMenuOpen,
-  isScrolled,
   navLinks,
   toggleMenu,
   resolvedTheme,
@@ -133,12 +140,15 @@ export const MobileMenu = ({
       <button
         onClick={toggleMenu}
         className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300"
+        aria-expanded={isMenuOpen}
+        aria-label="Toggle mobile menu"
       >
         <svg
           className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          aria-hidden="true"
         >
           {isMenuOpen ? (
             <path
@@ -175,6 +185,7 @@ export const MobileMenu = ({
             <button
               onClick={toggleTheme}
               className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition duration-300"
+              aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
             >
               <span className="flex items-center">
                 {resolvedTheme === "dark" ? (
@@ -184,6 +195,7 @@ export const MobileMenu = ({
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -199,6 +211,7 @@ export const MobileMenu = ({
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -217,6 +230,9 @@ export const MobileMenu = ({
               <button
                 onClick={toggleLanguageMenu}
                 className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition duration-300"
+                aria-expanded={isLanguageMenuOpen}
+                aria-haspopup="true"
+                aria-label="Select language"
               >
                 <span className="flex items-center justify-between">
                   <span className="flex items-center">
@@ -226,6 +242,7 @@ export const MobileMenu = ({
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -243,6 +260,7 @@ export const MobileMenu = ({
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
+                    aria-hidden="true"
                   >
                     <path
                       fillRule="evenodd"
@@ -259,6 +277,7 @@ export const MobileMenu = ({
                       key={lang.code}
                       className="flex items-center w-full text-left py-2 text-base font-medium text-gray-900 dark:text-gray-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition duration-300"
                       onClick={() => changeLanguage(lang.code)}
+                      aria-label={`Change language to ${lang.name}`}
                     >
                       {lang.icon}
                       <span className="ml-2">{lang.name}</span>
