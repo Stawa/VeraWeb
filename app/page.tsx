@@ -6,7 +6,6 @@ import Team from "@data/team.json";
 import Feature from "@data/feature.json";
 import Footer from "@default/components/footer";
 import Navbar from "@default/components/navbar";
-import Loading from "@default/components/loading";
 import Waves from "react-animated-waves";
 import Image from "next/image";
 
@@ -20,7 +19,7 @@ interface TeamMember {
 
 export default function Home() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>(Team);
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchProfilePicture = async (member: TeamMember) => {
@@ -38,17 +37,14 @@ export default function Home() {
     };
 
     const fetchAllProfilePictures = async () => {
+      setLoading(true);
       const updatedTeam = await Promise.all(Team.map(fetchProfilePicture));
       setTeamMembers(updatedTeam);
-      setIsLoading(false);
+      setLoading(false);
     };
 
     fetchAllProfilePictures();
   }, []);
-
-  if (isLoading) {
-    return <Loading />;
-  }
 
   return (
     <>
@@ -248,10 +244,12 @@ export default function Home() {
                       alt={member.name}
                       width={128}
                       height={128}
-                      className="rounded-full object-cover border-4 border-purple-500"
+                      className={`rounded-full object-cover border-4 border-purple-500 ${loading ? "animate-pulse" : ""}`}
                     />
                   ) : (
-                    <div className="w-24 sm:w-32 h-24 sm:h-32 rounded-full bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 flex items-center justify-center text-white text-3xl sm:text-4xl font-bold">
+                    <div
+                      className={`w-24 sm:w-32 h-24 sm:h-32 rounded-full bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 flex items-center justify-center text-white text-3xl sm:text-4xl font-bold ${loading ? "animate-pulse" : ""}`}
+                    >
                       {member.name[0]}
                     </div>
                   )}
