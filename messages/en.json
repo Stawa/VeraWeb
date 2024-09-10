@@ -1,0 +1,260 @@
+{
+  "main": {
+    "intro": {
+      "subtitle": "Virtual Entity For Responsive Assistant",
+      "description": "A Tool That Serves To Help Blind People",
+      "learnMore": "Learn More"
+    },
+    "awards": {
+      "awardWinningInnovation": "Award-Winning Innovation",
+      "awardDescription": "We are proud to announce that our team won the Silver Medal in the IID Innopa competition with V.E.R.A as our innovative tool!",
+      "silverMedalWinner": "Silver Medal Winner"
+    },
+    "veraRecognition": "V.E.R.A has been recognized for its innovative approach in assisting blind individuals, showcasing our commitment to accessibility and technological advancement.",
+    "awardDate": "31th August 2024",
+    "experienceVeraInAction": "Experience V.E.R.A in Action",
+    "veraDemoVideo": "V.E.R.A Demo Video",
+    "experienceVeraDescription": "Experience V.E.R.A in action. This demo showcases the key features and functionality of our responsive assistant.",
+    "howToUseVera": "How to Use V.E.R.A",
+    "veraFeatures": "V.E.R.A Features",
+    "veraTeam": "Meet the V.E.R.A Team",
+    "step": "Step",
+    "implemented": "Implemented",
+    "comingSoon": "Coming Soon",
+    "steps": [
+      {
+        "title": "Plug in the Adapter",
+        "description": "Connect the V.E.R.A adapter to a power source to begin setup."
+      },
+      {
+        "title": "Connect the Microphone",
+        "description": "Attach the microphone to the designated port on the V.E.R.A device."
+      },
+      {
+        "title": "Activate V.E.R.A",
+        "description": "Say 'Hello V.E.R.A' to activate. Ask your question, and V.E.R.A will respond."
+      }
+    ],
+    "features": [
+      {
+        "title": "Voice Recognition",
+        "description": "V.E.R.A can recognize your voice and respond to your questions."
+      },
+      {
+        "title": "Switching Languages",
+        "description": "V.E.R.A can switch between languages."
+      },
+      {
+        "title": "Music Playback",
+        "description": "V.E.R.A can play and control music from various sources"
+      }
+    ]
+  },
+  "navbar": {
+    "languages": {
+      "english": "English",
+      "indonesian": "Indonesian"
+    },
+    "wiki": "Wiki",
+    "documentation": "Documentation",
+    "themeToggle": {
+      "ariaLabel": "Switch to {mode} mode"
+    },
+    "languageMenu": {
+      "selectLanguage": "Select language",
+      "changeLanguage": "Change language to {language}"
+    },
+    "mobileMenu": {
+      "toggleMobileMenu": "Toggle mobile menu",
+      "switchTheme": "Switch to {mode} mode",
+      "switchTo": "Switch to {mode} Mode",
+      "selectLanguage": "Select Language"
+    }
+  },
+  "footer": {
+    "subtitle": "Virtual Entity For Responsive Assistant",
+    "sourceCode": "Source Code",
+    "copyrightText": "© {year} V.E.R.A. All rights reserved.",
+    "designedBy": "Designed by",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "wiki": {
+    "title": "V.E.R.A Wiki",
+    "description": "Welcome to the V.E.R.A Wiki. Here you can find information about our Virtual Entity for Responsive Assistant.",
+    "sections": [
+      {
+        "title": "FAQs",
+        "description": "Find answers to frequently asked questions about V.E.R.A"
+      },
+      {
+        "title": "Troubleshooting",
+        "description": "Solutions to common issues and problems"
+      },
+      {
+        "title": "Updates",
+        "description": "Latest updates and changes to V.E.R.A"
+      },
+      {
+        "title": "Source Code",
+        "description": "Access and explore the V.E.R.A project source code"
+      }
+    ],
+    "backToHome": "Back to Home"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to frequently asked questions about V.E.R.A",
+    "backToWiki": "Back to Wiki",
+    "questions": [
+      {
+        "question": "What is V.E.R.A?",
+        "answer": "V.E.R.A stands for Virtual Entity for Responsive Assistant. It's a tool designed to help blind people by providing responsive assistance."
+      },
+      {
+        "question": "How does V.E.R.A work?",
+        "answer": "V.E.R.A uses advanced AI technology to interpret visual information and convert it into audio descriptions, helping blind users navigate their environment and understand their surroundings."
+      },
+      {
+        "question": "Do I need an internet connection to use V.E.R.A?",
+        "answer": "For now, V.E.R.A requires an internet connection to work."
+      },
+      {
+        "question": "How can I set up V.E.R.A?",
+        "answer": "Setting up V.E.R.A is simple. Just plug in the adapter, connect the microphone, and activate it by saying 'Hello V.E.R.A'."
+      }
+    ]
+  },
+  "troubleshooting": {
+    "title": "Troubleshooting",
+    "description": "Find solutions to common issues with V.E.R.A",
+    "backToWiki": "Back to Wiki",
+    "problems": [
+      {
+        "problem": "V.E.R.A is not responding",
+        "solutions": [
+          "Check if the device is properly connected and powered on",
+          "Ensure your internet connection is stable",
+          "Try restarting the device"
+        ]
+      },
+      {
+        "problem": "V.E.R.A is not recognizing commands",
+        "solutions": [
+          "Speak clearly and at a moderate pace",
+          "Reduce background noise if possible",
+          "Check if the correct language setting is selected"
+        ]
+      }
+    ]
+  },
+  "sourceCode": {
+    "sourceCodeTitle": "V.E.R.A Source Code",
+    "sourceCodeDescription": "Explore the packages that power V.E.R.A. Each package is designed to handle specific functionalities of our Virtual Entity for Responsive Assistant.",
+    "importantAnnouncement": "Important Announcement",
+    "announcementDescription": "We are excited to announce that V.E.R.A will be migrating from TypeScript to C# (.NET). This transition will enhance our Virtual Entity for Responsive Assistant. Stay tuned for updates!",
+    "implemented": "Implemented",
+    "inProgress": "In Progress",
+    "notImplemented": "Not Implemented",
+    "gttsDescription": "Core functionality and utilities for V.E.R.A",
+    "veraCoreDescription": "Core functionality and utilities for V.E.R.A",
+    "veraVisualDescription": "Displays text for voice input and text output on display for V.E.R.A",
+    "backToWiki": "Back to Wiki"
+  },
+  "updates": {
+    "title": "V.E.R.A Updates",
+    "description": "Stay up-to-date with the latest changes and improvements to V.E.R.A.",
+    "versionTitle": "V.E.R.A v{version}",
+    "viewOnGithub": "View on GitHub",
+    "backToWiki": "Back to Wiki",
+    "changes": {
+      "initialRelease": "Initial release of V.E.R.A",
+      "basicVoiceRecognition": "Implemented basic voice recognition",
+      "textToSpeech": "Added text-to-speech functionality"
+    }
+  },
+  "docs": {
+    "title": "V.E.R.A Documentation",
+    "description": "Explore the V.E.R.A source code with our full documentation.",
+    "exploreDocumentation": "Explore Documentation",
+    "backToHome": "Back to Home",
+    "packages": [
+      {
+        "name": "GTTS",
+        "description": "Core functionality and utilities for V.E.R.A"
+      },
+      {
+        "name": "Vera Core",
+        "description": "Core functionality and utilities for V.E.R.A"
+      },
+      {
+        "name": "Vera Visual",
+        "description": "Displays text for voice input and text output on display for V.E.R.A"
+      },
+      {
+        "name": "Vera Core",
+        "description": "Core API for interacting with Vera's fundamental features."
+      },
+      {
+        "name": "Vera Visual",
+        "description": "User-friendly interface for seamless interaction with Vera API."
+      }
+    ]
+  },
+  "tos": {
+    "title": "Terms of Service",
+    "description": "This page outlines the terms of service for V.E.R.A, a virtual assistant designed to revolutionize human-computer interaction. Please read these terms carefully before using V.E.R.A.",
+    "backToHome": "Back to Home",
+    "privacyPolicy": "Privacy Policy",
+    "sections": [
+      {
+        "title": "Acceptance of Terms",
+        "content": "By accessing or using V.E.R.A, you agree to comply with and be bound by these Terms of Service. If you do not agree to these terms, please do not use our service."
+      },
+      {
+        "title": "Use of Service",
+        "content": "You agree to use V.E.R.A only for lawful purposes and in accordance with these Terms. You are prohibited from violating or attempting to violate the security of the Service."
+      },
+      {
+        "title": "Intellectual Property",
+        "content": "The content, features, and functionality of V.E.R.A are owned by us and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws."
+      },
+      {
+        "title": "Limitation of Liability",
+        "content": "V.E.R.A and its affiliates will not be liable for any indirect, incidental, special, consequential or punitive damages resulting from your use of the service."
+      },
+      {
+        "title": "Changes to Terms",
+        "content": "We reserve the right to modify these Terms at any time. Your continued use of V.E.R.A after any such changes constitutes your acceptance of the new Terms."
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "Privacy policy outlines how we handle and protect your personal data.",
+    "backToHome": "Back to Home",
+    "termsOfService": "Terms of Service",
+    "sections": [
+      {
+        "title": "Information Collection",
+        "content": "We collect information you provide directly to us when using V.E.R.A. This may include personal information such as your name, email address, and usage data."
+      },
+      {
+        "title": "Use of Information",
+        "content": "We use the information we collect to provide, maintain, and improve our services, as well as to communicate with you about V.E.R.A and related offerings."
+      },
+      {
+        "title": "Data Security",
+        "content": "We implement appropriate technical and organizational measures to protect the security of your personal information against unauthorized access, alteration, disclosure, or destruction."
+      },
+      {
+        "title": "Third-Party Services",
+        "content": "We may use third-party services that collect, monitor and analyze this type of information in order to increase our Service's functionality. These third-party service providers have their own privacy policies addressing how they use such information."
+      },
+      {
+        "title": "Changes to Privacy Policy",
+        "content": "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'last updated' date."
+      }
+    ]
+  }
+}

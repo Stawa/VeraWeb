@@ -1,0 +1,260 @@
+{
+  "main": {
+    "intro": {
+      "subtitle": "Entitas Virtual untuk Asisten Responsif",
+      "description": "Alat yang Berfungsi untuk Membantu Penyandang Tunanetra",
+      "learnMore": "Belajar Lebih Lanjut"
+    },
+    "awards": {
+      "awardWinningInnovation": "Inovasi Terpilih",
+      "awardDescription": "Kami bangga mengumumkan bahwa tim kami berhasil memenangkan medali perak dalam kompetisi IID Innopa dengan V.E.R.A sebagai alat inovatif kami!",
+      "silverMedalWinner": "Pemenang Medali Perak"
+    },
+    "veraRecognition": "V.E.R.A telah diakui atas pendekatan inovatifnya dalam membantu individu tunanetra, menunjukkan komitmen kami terhadap aksesibilitas dan kemajuan teknologi.",
+    "awardDate": "31 Agustus 2024",
+    "experienceVeraInAction": "Rasakan V.E.R.A dalam Aksi",
+    "veraDemoVideo": "Video Demo V.E.R.A",
+    "experienceVeraDescription": "Rasakan V.E.R.A dalam aksi. Demo ini menampilkan fitur-fitur utama dan fungsionalitas asisten responsif kami.",
+    "howToUseVera": "Cara Menggunakan V.E.R.A",
+    "veraFeatures": "Fitur-fitur V.E.R.A",
+    "veraTeam": "Kenali Tim V.E.R.A",
+    "step": "Langkah",
+    "implemented": "Telah Diimplementasikan",
+    "comingSoon": "Segera Hadir",
+    "steps": [
+      {
+        "title": "Colokkan Adaptor",
+        "description": "Hubungkan adaptor V.E.R.A ke sumber daya untuk memulai pengaturan."
+      },
+      {
+        "title": "Sambungkan Mikrofon",
+        "description": "Pasang mikrofon ke port yang ditentukan pada perangkat V.E.R.A."
+      },
+      {
+        "title": "Aktifkan V.E.R.A",
+        "description": "Ucapkan 'Halo V.E.R.A' untuk mengaktifkan. Ajukan pertanyaan Anda, dan V.E.R.A akan merespons."
+      }
+    ],
+    "features": [
+      {
+        "title": "Pengenalan Suara",
+        "description": "V.E.R.A dapat mengenali suara Anda dan merespons pertanyaan Anda."
+      },
+      {
+        "title": "Pergantian Bahasa",
+        "description": "V.E.R.A dapat beralih antara bahasa-bahasa."
+      },
+      {
+        "title": "Pemutaran Musik",
+        "description": "V.E.R.A dapat memutar dan mengontrol musik dari berbagai sumber"
+      }
+    ]
+  },
+  "navbar": {
+    "languages": {
+      "english": "Bahasa Inggris",
+      "indonesian": "Bahasa Indonesia"
+    },
+    "wiki": "Wiki",
+    "documentation": "Dokumentasi",
+    "themeToggle": {
+      "ariaLabel": "Beralih ke mode {mode}"
+    },
+    "languageMenu": {
+      "selectLanguage": "Pilih bahasa",
+      "changeLanguage": "Ubah bahasa ke {language}"
+    },
+    "mobileMenu": {
+      "toggleMobileMenu": "Alihkan menu seluler",
+      "switchTheme": "Beralih ke mode {mode}",
+      "switchTo": "Beralih ke Mode {mode}",
+      "selectLanguage": "Pilih Bahasa"
+    }
+  },
+  "footer": {
+    "subtitle": "Entitas Virtual untuk Asisten Responsif",
+    "sourceCode": "Kode Sumber",
+    "copyrightText": "© {year} V.E.R.A. Hak Cipta Dilindungi Undang-Undang.",
+    "designedBy": "Didesain oleh",
+    "termsOfService": "Ketentuan Layanan",
+    "privacyPolicy": "Kebijakan Privasi"
+  },
+  "wiki": {
+    "title": "Wiki V.E.R.A",
+    "description": "Selamat datang di Wiki V.E.R.A. Di sini Anda dapat menemukan informasi tentang Entitas Virtual untuk Asisten Responsif kami.",
+    "sections": [
+      {
+        "title": "FAQ",
+        "description": "Temukan jawaban untuk pertanyaan yang sering diajukan tentang V.E.R.A"
+      },
+      {
+        "title": "Pemecahan Masalah",
+        "description": "Solusi untuk masalah umum dan permasalahan"
+      },
+      {
+        "title": "Pembaruan",
+        "description": "Pembaruan dan perubahan terbaru pada V.E.R.A"
+      },
+      {
+        "title": "Kode Sumber",
+        "description": "Akses dan jelajahi kode sumber proyek V.E.R.A"
+      }
+    ],
+    "backToHome": "Kembali ke Beranda"
+  },
+  "faq": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "description": "Temukan jawaban untuk pertanyaan yang sering diajukan tentang V.E.R.A",
+    "backToWiki": "Kembali ke Wiki",
+    "questions": [
+      {
+        "question": "Apa itu V.E.R.A?",
+        "answer": "V.E.R.A adalah singkatan dari Virtual Entity for Responsive Assistant. Ini adalah alat yang dirancang untuk membantu penyandang tunanetra dengan memberikan bantuan responsif."
+      },
+      {
+        "question": "Bagaimana cara kerja V.E.R.A?",
+        "answer": "V.E.R.A menggunakan teknologi AI canggih untuk menginterpretasikan informasi visual dan mengubahnya menjadi deskripsi audio, membantu pengguna tunanetra menavigasi lingkungan mereka dan memahami sekitar mereka."
+      },
+      {
+        "question": "Apakah saya memerlukan koneksi internet untuk menggunakan V.E.R.A?",
+        "answer": "Untuk saat ini, V.E.R.A memerlukan koneksi internet untuk bekerja."
+      },
+      {
+        "question": "Bagaimana cara mengatur V.E.R.A?",
+        "answer": "Mengatur V.E.R.A sangat sederhana. Cukup colokkan adaptor, sambungkan mikrofon, dan aktifkan dengan mengucapkan 'Halo V.E.R.A'."
+      }
+    ]
+  },
+  "troubleshooting": {
+    "title": "Pemecahan Masalah",
+    "description": "Temukan solusi untuk masalah umum dengan V.E.R.A",
+    "backToWiki": "Kembali ke Wiki",
+    "problems": [
+      {
+        "problem": "V.E.R.A tidak merespons",
+        "solutions": [
+          "Periksa apakah perangkat terhubung dengan benar dan menyala",
+          "Pastikan koneksi internet Anda stabil",
+          "Coba restart perangkat"
+        ]
+      },
+      {
+        "problem": "V.E.R.A tidak mengenali perintah",
+        "solutions": [
+          "Bicaralah dengan jelas dan dengan kecepatan sedang",
+          "Kurangi kebisingan latar belakang jika memungkinkan",
+          "Periksa apakah pengaturan bahasa yang benar telah dipilih"
+        ]
+      }
+    ]
+  },
+  "sourceCode": {
+    "sourceCodeTitle": "Kode Sumber V.E.R.A",
+    "sourceCodeDescription": "Jelajahi paket-paket yang menggerakkan V.E.R.A. Setiap paket dirancang untuk menangani fungsionalitas spesifik dari Entitas Virtual untuk Asisten Responsif kami.",
+    "importantAnnouncement": "Pengumuman Penting",
+    "announcementDescription": "Kami dengan senang hati mengumumkan bahwa V.E.R.A akan bermigrasi dari TypeScript ke C# (.NET). Transisi ini akan meningkatkan Entitas Virtual untuk Asisten Responsif kami. Nantikan pembaruan selanjutnya!",
+    "implemented": "Telah Diimplementasikan",
+    "inProgress": "Sedang Berlangsung",
+    "notImplemented": "Belum Diimplementasikan",
+    "gttsDescription": "Fungsionalitas inti dan utilitas untuk V.E.R.A",
+    "veraCoreDescription": "Fungsionalitas inti dan utilitas untuk V.E.R.A",
+    "veraVisualDescription": "Menampilkan teks untuk input suara dan output teks pada tampilan untuk V.E.R.A",
+    "backToWiki": "Kembali ke Wiki"
+  },
+  "updates": {
+    "title": "Pembaruan V.E.R.A",
+    "description": "Tetap up-to-date dengan perubahan dan peningkatan terbaru pada V.E.R.A.",
+    "versionTitle": "V.E.R.A v{version}",
+    "viewOnGithub": "Lihat di GitHub",
+    "backToWiki": "Kembali ke Wiki",
+    "changes": {
+      "initialRelease": "Rilis awal V.E.R.A",
+      "basicVoiceRecognition": "Implementasi pengenalan suara dasar",
+      "textToSpeech": "Penambahan fungsionalitas text-to-speech"
+    }
+  },
+  "docs": {
+    "title": "Dokumentasi V.E.R.A",
+    "description": "Jelajahi kode sumber V.E.R.A dengan dokumentasi lengkap kami.",
+    "exploreDocumentation": "Jelajahi Dokumentasi",
+    "backToHome": "Kembali ke Beranda",
+    "packages": [
+      {
+        "name": "GTTS",
+        "description": "Fungsionalitas inti dan utilitas untuk V.E.R.A"
+      },
+      {
+        "name": "Vera Core",
+        "description": "Fungsionalitas inti dan utilitas untuk V.E.R.A"
+      },
+      {
+        "name": "Vera Visual",
+        "description": "Menampilkan teks untuk input suara dan output teks pada tampilan untuk V.E.R.A"
+      },
+      {
+        "name": "Vera Core",
+        "description": "API inti untuk berinteraksi dengan fitur-fitur fundamental Vera."
+      },
+      {
+        "name": "Vera Visual",
+        "description": "Antarmuka yang ramah pengguna untuk interaksi yang mulus dengan API Vera."
+      }
+    ]
+  },
+  "tos": {
+    "title": "Ketentuan Layanan",
+    "description": "Halaman ini menguraikan syarat layanan untuk V.E.R.A, asisten virtual yang dirancang untuk merevolusi interaksi manusia-komputer. Harap baca syarat ini dengan seksama sebelum menggunakan V.E.R.A.",
+    "backToHome": "Kembali ke Beranda",
+    "privacyPolicy": "Kebijakan Privasi",
+    "sections": [
+      {
+        "title": "Penerimaan Syarat",
+        "content": "Dengan mengakses atau menggunakan V.E.R.A, Anda setuju untuk mematuhi dan terikat oleh Syarat Layanan ini. Jika Anda tidak setuju dengan syarat ini, harap jangan gunakan layanan kami."
+      },
+      {
+        "title": "Penggunaan Layanan",
+        "content": "Anda setuju untuk menggunakan V.E.R.A hanya untuk tujuan yang sah dan sesuai dengan Syarat ini. Anda dilarang melanggar atau mencoba melanggar keamanan Layanan."
+      },
+      {
+        "title": "Kekayaan Intelektual",
+        "content": "Konten, fitur, dan fungsionalitas V.E.R.A adalah milik kami dan dilindungi oleh hukum hak cipta internasional, merek dagang, paten, rahasia dagang, dan kekayaan intelektual lainnya."
+      },
+      {
+        "title": "Batasan Tanggung Jawab",
+        "content": "V.E.R.A dan afiliasinya tidak akan bertanggung jawab atas kerugian tidak langsung, insidental, khusus, konsekuensial atau punitif yang diakibatkan oleh penggunaan layanan Anda."
+      },
+      {
+        "title": "Perubahan Syarat",
+        "content": "Kami berhak untuk mengubah Syarat ini kapan saja. Penggunaan V.E.R.A yang berkelanjutan setelah perubahan tersebut merupakan penerimaan Anda terhadap Syarat baru."
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Kebijakan Privasi",
+    "description": "Kebijakan privasi menguraikan bagaimana kami menangani dan melindungi data pribadi Anda.",
+    "backToHome": "Kembali ke Beranda",
+    "termsOfService": "Ketentuan Layanan",
+    "sections": [
+      {
+        "title": "Pengumpulan Informasi",
+        "content": "Kami mengumpulkan informasi yang Anda berikan langsung kepada kami saat menggunakan V.E.R.A. Ini mungkin termasuk informasi pribadi seperti nama, alamat email, dan data penggunaan Anda."
+      },
+      {
+        "title": "Penggunaan Informasi",
+        "content": "Kami menggunakan informasi yang kami kumpulkan untuk menyediakan, memelihara, dan meningkatkan layanan kami, serta untuk berkomunikasi dengan Anda tentang V.E.R.A dan penawaran terkait."
+      },
+      {
+        "title": "Keamanan Data",
+        "content": "Kami menerapkan langkah-langkah teknis dan organisasi yang tepat untuk melindungi keamanan informasi pribadi Anda terhadap akses, perubahan, pengungkapan, atau penghancuran yang tidak sah."
+      },
+      {
+        "title": "Layanan Pihak Ketiga",
+        "content": "Kami mungkin menggunakan layanan pihak ketiga yang mengumpulkan, memantau, dan menganalisis jenis informasi ini untuk meningkatkan fungsionalitas Layanan kami. Penyedia layanan pihak ketiga ini memiliki kebijakan privasi mereka sendiri yang menjelaskan bagaimana mereka menggunakan informasi tersebut."
+      },
+      {
+        "title": "Perubahan Kebijakan Privasi",
+        "content": "Kami dapat memperbarui Kebijakan Privasi kami dari waktu ke waktu. Kami akan memberi tahu Anda tentang perubahan apa pun dengan memposting Kebijakan Privasi baru di halaman ini dan memperbarui tanggal 'terakhir diperbarui'."
+      }
+    ]
+  }
+}
