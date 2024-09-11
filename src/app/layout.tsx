@@ -31,9 +31,27 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: ["/favicon.ico?v=4"],
-    apple: ["/apple-touch-icon.png?v=4"],
-    shortcut: ["/apple-touch-icon.png"],
+    icon: [
+      { url: "/favicon-light.ico", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon.ico", media: "(prefers-color-scheme: dark)" },
+    ],
+    apple: [
+      {
+        url: "/apple-touch-icon.png?v=4",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/apple-touch-icon-light.png?v=4",
+        media: "(prefers-color-scheme: light)",
+      },
+    ],
+    shortcut: [
+      { url: "/apple-touch-icon.png", media: "(prefers-color-scheme: dark)" },
+      {
+        url: "/apple-touch-icon-light.png",
+        media: "(prefers-color-scheme: light)",
+      },
+    ],
   },
   keywords: [
     "blind assistance",
