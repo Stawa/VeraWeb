@@ -77,7 +77,7 @@ export default function Home() {
             {member.name}
           </h3>
           <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4">
-            {member.role}
+            {t(`member.${index}.role`, { fallback: member.role })}
           </p>
           <div className="flex justify-center space-x-4">
             {member.github && (

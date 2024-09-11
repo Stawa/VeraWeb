@@ -48,6 +48,32 @@
         "title": "Music Playback",
         "description": "V.E.R.A can play and control music from various sources"
       }
+    ],
+    "member": [
+      {
+        "role": "Team Leader"
+      },
+      {
+        "role": "Lead Developer"
+      },
+      {
+        "role": "Co-Developer"
+      },
+      {
+        "role": "Presenter & Poster Designer"
+      },
+      {
+        "role": "Presenter"
+      },
+      {
+        "role": "Presenter"
+      },
+      {
+        "role": "Logo Designer"
+      },
+      {
+        "role": "Poster Designer"
+      }
     ]
   },
   "navbar": {

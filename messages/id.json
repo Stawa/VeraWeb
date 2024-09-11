@@ -48,6 +48,32 @@
         "title": "Pemutaran Musik",
         "description": "V.E.R.A dapat memutar dan mengontrol musik dari berbagai sumber"
       }
+    ],
+    "member": [
+      {
+        "role": "Pemimpin Tim"
+      },
+      {
+        "role": "Pengembang Utama"
+      },
+      {
+        "role": "Pengembang Pendamping"
+      },
+      {
+        "role": "Presenter & Desainer Poster"
+      },
+      {
+        "role": "Presenter"
+      },
+      {
+        "role": "Presenter"
+      },
+      {
+        "role": "Desainer Logo"
+      },
+      {
+        "role": "Desainer Poster"
+      }
     ]
   },
   "navbar": {
